@@ -5,7 +5,7 @@
 # SavingsAccount and CheckingAccount with their own methods. The transaction module
 # should provide functions for deposit and withdrawal.
 
-import transaction as tran
+
 class Account:
     def __init__(self, account_number, holder_name, balance):
         self.account_number = account_number
@@ -18,25 +18,24 @@ class SavingsAccount(Account):
         Account.__init__(self, account_number, holder_name, balance)
         self.saveBlc = saveBlc
 
-    def savingBlc(self):
-        print(f"Welcome {self.holder_name}, your current balance in saving account is {self.saveBlc}")
-
+    def savingBlc(self, account):
+        acc = account
+        if self.account_number == acc:
+            print(f"Welcome {self.holder_name}, your current balance in saving account is {self.saveBlc}")
+        else:
+            print("invalid account number")
 
 class CheckingAccount(Account):
     def __init__(self,account_number, holder_name, balance, checkBlc):
         Account.__init__(self, account_number, holder_name, balance)
         self.checkBlc = checkBlc
 
-    def checkingBlc(self):
-        print(f"Welcome account:{self.account_number}, your current balance in checking account is {self.checkBlc}")
+    def checkingBlc(self,account):
+        acc = account
+        if self.account_number == acc:
+            print(f"Welcome account:{self.account_number}, your current balance in checking account is {self.checkBlc}")
+        else:
+            print("invaid acc number")
 
-
-saving = SavingsAccount("11230856","Sonal Adhikari", 50000, 30000)
-saving.savingBlc()
-checking = CheckingAccount("11230856", "Sonal Adhikari",50000, 20000)
-checking.checkingBlc()
-tran.withdraw(5500)
-tran.deposit(3000)
-
-
-
+saving = SavingsAccount("111","Sonal Adhikari", 50000, 30000)
+checking = CheckingAccount("111", "Sonal Adhikari",50000, 20000)
