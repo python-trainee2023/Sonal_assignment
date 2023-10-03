@@ -1,0 +1,12 @@
+Student 1:
+Name - Ram Thapa
+Gender - Male
+Age - 15
+
+Student 2:
+Name - Sita KC
+Gender - Female
+Age - 16
+
+
+

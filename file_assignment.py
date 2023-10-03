@@ -9,14 +9,17 @@
 find_author = input("enter the name of author to find their book")
 author_found = False
 try:
- with open("book.txt", "r") as file:
-    for x in file:
-        author, book = x.strip().split(", ")
-        if author == find_author:
-            print(f"book: {book}\nauthor: {author}")
-            author_found = True
- if not author_found:
-     print(f"author {find_author} not found in book.txt")
+    with open("book.txt", "r") as file:
+        for x in file:
+            author, book = x.strip().split(", ")
+            if author == find_author:
+                print(f"book: {book}\nauthor: {author}")
+                author_found = True
+    if not author_found:
+        print(f"author {find_author} not found in book.txt")
 
-except FileNotFoundError:
-    print("file doesnt exist")
+# except FileNotFoundError:
+#     print("file doesnt exist")
+
+except Exception as e:
+    print(f"an error occured::{str(e)}")

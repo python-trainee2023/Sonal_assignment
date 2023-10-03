@@ -3,8 +3,9 @@
 
 word_count = 0
 with open("test.txt","r") as file:
-    for x in file:
-        split_word = x.split(" ")
+    lines = file.readlines()
+    for x in lines:
+        split_word = x.strip().split(" ")
         print(split_word)
         for i in split_word:
             word = i.endswith("e")
